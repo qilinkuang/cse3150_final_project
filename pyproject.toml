@@ -53,7 +53,6 @@ Issues = "https://github.com/yourusername/bgp_simulator/issues"
 
 [tool.setuptools]
 packages = ["bgp_simulator"]
-package-dir = {"" = "src"}
 
 [tool.setuptools.package-data]
 bgp_simulator = ["py.typed", "*.so", "*.pyd"]
@@ -79,7 +78,7 @@ select = ["E", "F", "I", "N", "W", "D", "UP", "ANN", "B", "A", "COM", "C4", "DTZ
 ignore = ["D100", "D104", "D203", "D213", "ANN101", "ANN102"]
 
 [tool.pytest.ini_options]
-testpaths = ["src/bgp_simulator/tests"]
+testpaths = ["bgp_simulator/tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]

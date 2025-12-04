@@ -27,24 +27,24 @@ execute_process(
 
 find_package(pybind11 CONFIG REQUIRED HINTS "${pybind11_DIR}")
 
-# Source files
+# Source files - UPDATED PATHS (removed src/ prefix)
 set(SOURCES
-    src/bgp_simulator/cpp/src/announcement.cpp
-    src/bgp_simulator/cpp/src/as.cpp
-    src/bgp_simulator/cpp/src/bgp.cpp
-    src/bgp_simulator/cpp/src/rov.cpp
-    src/bgp_simulator/cpp/src/simulator.cpp
+    bgp_simulator/cpp/src/announcement.cpp
+    bgp_simulator/cpp/src/as.cpp
+    bgp_simulator/cpp/src/bgp.cpp
+    bgp_simulator/cpp/src/rov.cpp
+    bgp_simulator/cpp/src/simulator.cpp
 )
 
-# Create Python extension module
+# Create Python extension module - UPDATED PATH
 pybind11_add_module(_core 
-    src/bgp_simulator/cpp/main.cpp
+    bgp_simulator/cpp/main.cpp
     ${SOURCES}
 )
 
-# Include directories
+# Include directories - UPDATED PATH (also fixed 'includes' -> 'include')
 target_include_directories(_core PRIVATE
-    src/bgp_simulator/cpp/includes
+    bgp_simulator/cpp/include
 )
 
 # Install the module
