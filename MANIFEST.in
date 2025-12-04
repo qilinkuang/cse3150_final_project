@@ -1,0 +1,6 @@
+include README.md
+include LICENSE.txt
+include pyproject.toml
+include CMakeLists.txt
+recursive-include src/bgp_simulator/cpp *.cpp *.h
+include src/bgp_simulator/py.typed
