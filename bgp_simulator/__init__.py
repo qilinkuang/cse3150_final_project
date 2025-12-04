@@ -96,9 +96,6 @@ def run_simulation(
     # Write output
     ribs = sim.get_ribs()
     with open(output_file, 'w', newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(['asn', 'prefix', 'as_path'])
+        f.write("asn,prefix,as_path\n")
         for asn, prefix, as_path in ribs:
-            writer.writerow([asn, prefix, as_path])
-    
-    print(f"Wrote {len(ribs)} RIB entries to {output_file}")
+            f.write(f'{asn},{prefix},"{as_path}"\n')

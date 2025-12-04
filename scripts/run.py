@@ -1,5 +1,3 @@
-"""Example script for running BGP simulation."""
-
 from pathlib import Path
 from bgp_simulator import run_simulation
 
